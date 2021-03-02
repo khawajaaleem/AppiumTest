@@ -1,10 +1,7 @@
 package org.sensyne.steps;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -37,8 +34,6 @@ public class StepDefs {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         searchPage  = new SearchPage(driver);
         hospitalDetailsPage = new HospitalDetailsPage(driver);
-
-
     }
 
     @Given("^user launches the application$")
@@ -67,5 +62,10 @@ public class StepDefs {
         Assert.assertEquals(type, hospitalDetailsPage.getType());
         Assert.assertEquals(sector, hospitalDetailsPage.getSector());
         Assert.assertEquals(phone, hospitalDetailsPage.getPhone());
+    }
+
+    @Then("user sees no results")
+    public void userSeesNoResults() {
+        Assert.assertEquals(0, searchPage.hospitalResults().size());
     }
 }

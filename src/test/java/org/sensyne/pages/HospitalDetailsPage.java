@@ -1,6 +1,5 @@
 package org.sensyne.pages;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -40,11 +39,8 @@ public class HospitalDetailsPage {
         return getSplitText(details.get(details.size() - 1).getText());
     }
 
-
     private String getSplitText(String text) {
         return text.split(":")[1].trim();
     }
-
-
 }
 
