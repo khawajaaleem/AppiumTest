@@ -15,3 +15,14 @@ Feature: Hospital Search
       | Milford Specialist Rehabilitation Hospital | Hospital               | Independent Sector | 01483 782500 |
       | East Riding Community Hospital             | Mental Health Hospital | NHS Sector         | 01482 886600 |
       | BMI The Saxon Clinic                       | UNKNOWN                | Independent Sector | 01908 665533 |
+
+
+  Scenario Outline: Invalid Search "<hospitalname>"
+    Given user launches the application
+    When user searches for "<hospitalname>"
+    Then user sees no results
+
+    Examples:
+      | hospitalname               |
+      | Oxford University Hospital |
+      | Queens Medical Hospital    |
