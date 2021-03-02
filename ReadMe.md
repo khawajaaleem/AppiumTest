@@ -20,4 +20,4 @@ Upon successful execution you can find the cucumber report in `target/cucumber-h
 Below is the execution report
 ![Report](/readme/report.png)
 
-> Note: This framework doesn't contain iOS tests, as Appium inspector is not working for iOS
+> Note: This framework doesn't contain iOS tests, as Appium inspector is not working for iOS application under test
